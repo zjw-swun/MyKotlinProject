@@ -24,8 +24,8 @@ class MainActivity : AppCompatActivity() {
         toolbar.setTitle("AppBarLayout")
         setSupportActionBar(toolbar)
 
-        supportActionBar!!.setHomeButtonEnabled(true)
-        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setHomeButtonEnabled(true)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         recyclerview.setLayoutManager(LinearLayoutManager(this))
         recyclerview.setAdapter(ContentAdapter())
