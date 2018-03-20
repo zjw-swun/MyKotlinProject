@@ -21,14 +21,14 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         toolbar.setTitleTextColor(Color.GREEN)
-        toolbar.setTitle("AppBarLayout")
+        toolbar.title = "AppBarLayout"
         setSupportActionBar(toolbar)
 
         supportActionBar?.setHomeButtonEnabled(true)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
-        recyclerview.setLayoutManager(LinearLayoutManager(this))
-        recyclerview.setAdapter(ContentAdapter())
+        recyclerview.layoutManager = LinearLayoutManager(this@MainActivity)
+        recyclerview.adapter = ContentAdapter()
 
         //通过CollapsingToolbarLayout设置title
         collapsing_toolbar_layout.title = "AppBarLayout"
@@ -53,11 +53,8 @@ class MainActivity : AppCompatActivity() {
 
         internal inner class ContentHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
-            val itemTv: TextView
+            val itemTv: TextView = itemView.findViewById<View>(android.R.id.text1) as TextView
 
-            init {
-                itemTv = itemView.findViewById<View>(android.R.id.text1) as TextView
-            }
         }
     }
 }
